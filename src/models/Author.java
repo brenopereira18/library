@@ -3,18 +3,17 @@ package models;
 import java.time.LocalDate;
 
 public class Author {
-    private static long idCounter = 1;
-    private final long id;
+    private static Integer idCounter = 1;
+    private final Integer id;
     private String name;
     private LocalDate dateOfBirth;
 
-    public Author(String name, LocalDate dateOfBirth) {
+    public Author(String name) {
         this.id = idCounter++;
         this.name = name;
-        this.dateOfBirth = dateOfBirth;
     }
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
