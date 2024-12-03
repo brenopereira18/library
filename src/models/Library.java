@@ -1,5 +1,6 @@
 package models;
 
+import java.awt.print.Book;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -8,7 +9,7 @@ public class Library {
     private List<Book> books;
     private List<Author> authors;
     private List<Loan> loans;
-    private  List<Client> clients;
+    private List<Client> clients;
 
     public Library() {
         this.books = new ArrayList<>();
@@ -40,7 +41,6 @@ public class Library {
         } else {
             System.out.println("Este autor já está cadastrado.");
         }
-    
     }
 
     public List<Client> listClients() {
@@ -65,5 +65,15 @@ public class Library {
         } else {
             System.out.println("Este empréstimo já foi cadastrado.");
         }
+    }
+
+    public List<Book> availableBooks() {
+        List<Book> booksForLoan = new ArrayList();
+        for (Book book : books) {
+            if (book.getAvailable()) {
+                booksForLoan.add(book);
+            }
+        }
+        return Collections.unmodifiableList(booksForLoan);
     }
 }
