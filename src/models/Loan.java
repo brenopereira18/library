@@ -28,7 +28,12 @@ public class Loan {
     }
 
     public void setBook(Book book) {
-        this.book = book;
+        if (book.getIsAvailable()) {
+            this.book = book;
+            this.book.setIsAvailable(false);
+        } else {
+            System.out.println("Este livro não está disponivel");
+        }
     }
 
     public Client getClient() {
