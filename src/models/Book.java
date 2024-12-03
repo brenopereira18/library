@@ -3,21 +3,23 @@ package models;
 import java.time.LocalDateTime;
 
 public class Book {
-    private static long idCounter = 1;
-    private final long id;
+    private static Integer idCounter = 1;
+    private final Integer id;
     private String title;
     private Author author;
-    private Boolean isAvailable = true;
+    private Boolean isAvailable;
     private LocalDateTime dateRegistration;
     private LocalDateTime dateUpdate;
 
-    public Book(Author author) {
+    public Book(String title, Author author) {
         this.id = idCounter++;
+        this.title = title;
         this.author = author;
+        this.isAvailable = true;
         this.dateRegistration = LocalDateTime.now();
     }
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -34,7 +36,11 @@ public class Book {
     }
 
     public void setAuthor(Author author) {
-        this.author = author;
+        if (author != null) {
+            this.author = author;
+        } else {
+            throw new IllegalArgumentException("Erro: O autor não pode ser nulo.");
+        }
     }
 
     public Boolean getIsAvailable() {
