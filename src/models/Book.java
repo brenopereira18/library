@@ -37,11 +37,11 @@ public class Book {
         this.author = author;
     }
 
-    public Boolean getAvailable() {
+    public Boolean getIsAvailable() {
         return isAvailable;
     }
 
-    public void setAvailable(Boolean available) {
+    public void setIsAvailable(Boolean available) {
         isAvailable = available;
     }
 
