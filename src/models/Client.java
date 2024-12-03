@@ -3,8 +3,8 @@ package models;
 import java.time.LocalDate;
 
 public class Client {
-    private static long idCounter = 1;
-    private final long id;
+    private static Integer idCounter = 1;
+    private final Integer id;
     private  String name;
     private LocalDate dateOfBirth;
     private String email;
@@ -16,7 +16,7 @@ public class Client {
         this.email = email;
     }
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
