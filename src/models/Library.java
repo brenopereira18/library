@@ -1,6 +1,5 @@
 package models;
 
-import java.awt.print.Book;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -68,9 +67,9 @@ public class Library {
     }
 
     public List<Book> availableBooks() {
-        List<Book> booksForLoan = new ArrayList();
+        List<Book> booksForLoan = new ArrayList<>();
         for (Book book : books) {
-            if (book.getAvailable()) {
+            if (book.getIsAvailable()) {
                 booksForLoan.add(book);
             }
         }
