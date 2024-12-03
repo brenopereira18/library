@@ -40,7 +40,7 @@ public class Library {
         } else {
             System.out.println("Este autor já está cadastrado.");
         }
-
+    
     }
 
     public List<Client> listClients() {
