@@ -3,8 +3,8 @@ package models;
 import java.time.LocalDateTime;
 
 public class Loan {
-    private static long idCounter = 1;
-    private final long id;
+    private static Integer idCounter = 1;
+    private final Integer id;
     private Book book;
     private Client client;
     private LocalDateTime loanDate;
@@ -19,7 +19,7 @@ public class Loan {
         this.returnDate = this.loanDate.plusMonths(2);
     }
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
